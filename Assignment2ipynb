@@ -1,0 +1,1265 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPmnq5KhC+/6o7lc/71FnfR"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1(i)"
+      ],
+      "metadata": {
+        "id": "D8eVNi5DiXU5"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q 1 Working with Lists\n",
+        "Q1(i)  Create the List"
+      ],
+      "metadata": {
+        "id": "-Dcf1f0LpEZD"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 58,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "eWBL7mWZfDa3",
+        "outputId": "b74e1c07-00e2-415c-8e5e-1a93c437d3a6"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10, 0, 20, 40, 10, 70, 0, 20, 90, 30]\n"
+          ]
+        }
+      ],
+      "source": [
+        "roll_number=\"1024170293\"\n",
+        "l=[]\n",
+        "for i in roll_number:\n",
+        "    l.append(int(i)*10)\n",
+        "print(l)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q1(ii):Add Elements"
+      ],
+      "metadata": {
+        "id": "IFKrujD_psZw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l.append(96)\n",
+        "print(\"After append(96): \",l)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3MN1BKrUf8Iu",
+        "outputId": "3d078d18-ab78-4821-b63f-469b6f0d3ed0"
+      },
+      "execution_count": 59,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "After append(96):  [10, 0, 20, 40, 10, 70, 0, 20, 90, 30, 96]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q1(iii):Remove Elements"
+      ],
+      "metadata": {
+        "id": "Ztjqy6vmpqa0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l.remove(30)\n",
+        "print(l)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Pc5OeGCyf8ME",
+        "outputId": "f85f3f1e-33c6-4051-a5db-8b7d7c558b0d"
+      },
+      "execution_count": 60,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10, 0, 20, 40, 10, 70, 0, 20, 90, 96]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q1(iv) – Sort the List"
+      ],
+      "metadata": {
+        "id": "2F2sLBA8poWe"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l.sort()\n",
+        "print(l)\n",
+        "l.sort(reverse=True)\n",
+        "print(l)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YGU2wbC3f8T4",
+        "outputId": "5407f1fd-6b40-4e5f-af72-305ebf04a706"
+      },
+      "execution_count": 61,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0, 0, 10, 10, 20, 20, 40, 70, 90, 96]\n",
+            "[96, 90, 70, 40, 20, 20, 10, 10, 0, 0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q1(v):Slice the List"
+      ],
+      "metadata": {
+        "id": "29MFT8CvpirW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"First 3 element:\",l[:3])\n",
+        "print(\"Last 3 elements:\",l[-3:])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6blS0RV0f8Wk",
+        "outputId": "79b39618-dff4-4ae0-874b-e2b507955a89"
+      },
+      "execution_count": 62,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "First 3 element: [96, 90, 70]\n",
+            "Last 3 elements: [10, 0, 0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q1(vi) : Filter Above Average"
+      ],
+      "metadata": {
+        "id": "dML-qxvwpe3d"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "average = sum(l) / len(l)\n",
+        "\n",
+        "greater_avg = [x for x in l if x > average]\n",
+        "\n",
+        "print(greater_avg)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4spY_Kknf8Zq",
+        "outputId": "bd23f6aa-2c8f-4f27-ba36-5bba991cee45"
+      },
+      "execution_count": 63,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[96, 90, 70, 40]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2:Working with Tuples Q2(i) – Find Highest & Lowest"
+      ],
+      "metadata": {
+        "id": "dfpuxwrapaoz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "scores = tuple(l[:8])\n",
+        "\n",
+        "print(scores)\n",
+        "\n",
+        "print(\"Max:\", max(scores),\n",
+        "      \"Index:\", scores.index(max(scores)),\n",
+        "      \"Count:\", scores.count(max(scores)))\n",
+        "\n",
+        "print(\"Min:\", min(scores),\n",
+        "      \"Index:\", scores.index(min(scores)),\n",
+        "      \"Count:\", scores.count(min(scores)))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3PXcsjJjf8c0",
+        "outputId": "cbfdc0b0-bf9c-4550-8f99-17c7c7ba21cb"
+      },
+      "execution_count": 64,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(96, 90, 70, 40, 20, 20, 10, 10)\n",
+            "Max: 96 Index: 0 Count: 1\n",
+            "Min: 10 Index: 6 Count: 2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2(ii): Reverse the Tuple"
+      ],
+      "metadata": {
+        "id": "ETN6ujB_pW1E"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "rev=list(scores[::-1])\n",
+        "print(\"Reversed as List: \", rev )\n",
+        "# tuples are immutable by reversing the tuple it changes the values at the indices"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WyU96SoshQ4N",
+        "outputId": "a530bd8b-bb46-4c67-db8e-ed47722c1379"
+      },
+      "execution_count": 65,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Reversed as List:  [10, 10, 20, 20, 40, 70, 90, 96]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2(iii):Search a Score"
+      ],
+      "metadata": {
+        "id": "LANhcZrmpUOL"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(scores)\n",
+        "score=int(input(\"Enter score to search:\"))\n",
+        "if score in scores:\n",
+        "  print(\"found at index:\",scores.index(score))\n",
+        "else:\n",
+        "  print(\"Not Found\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rUSe9jXshQ0q",
+        "outputId": "73bf4e46-2bef-48f8-c181-a4f388bce7be"
+      },
+      "execution_count": 66,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "(96, 90, 70, 40, 20, 20, 10, 10)\n",
+            "Enter score to search:96\n",
+            "found at index: 0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2(iv) – Tuple Immutability"
+      ],
+      "metadata": {
+        "id": "qSP08j0FjZ60"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "try :\n",
+        "  scores[0]=60\n",
+        "except TypeError as e:\n",
+        "  print(\"Error : \",e)\n",
+        "# Tuples are immutable, so elements cannot be changed after creation.\n",
+        "# Lists are mutable, so their elements can be modified."
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lNfSOCh1hQyQ",
+        "outputId": "6ef5af5a-29e9-433d-86a1-89e57a570d8c"
+      },
+      "execution_count": 67,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Error :  'tuple' object does not support item assignment\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q2(v) – Tuple Unpacking"
+      ],
+      "metadata": {
+        "id": "GWpA5a28jdNz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "first, second, *remaining = scores\n",
+        "\n",
+        "print(\"First Score:\", first)\n",
+        "print(\"Second Score:\", second)\n",
+        "print(\"Remaining Scores:\", remaining)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ikkYLRoThQwD",
+        "outputId": "3eff48b2-b366-485c-d362-005918738011"
+      },
+      "execution_count": 68,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "First Score: 96\n",
+            "Second Score: 90\n",
+            "Remaining Scores: [70, 40, 20, 20, 10, 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Question 3 – Random Number Analysis Q3(i) – Generate Random Numbers"
+      ],
+      "metadata": {
+        "id": "xHOjLq2Ujru5"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "import random\n",
+        "random.seed(1024170293)\n",
+        "random_list = [random.randint(100, 900) for _ in range(100)]\n",
+        "print(random_list)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0XH5ALdGhQtr",
+        "outputId": "32d28ad5-43aa-4020-eb3c-8fca099c3c47"
+      },
+      "execution_count": 69,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[458, 703, 371, 889, 793, 193, 415, 854, 664, 789, 152, 217, 337, 581, 663, 888, 196, 517, 635, 663, 262, 776, 123, 530, 125, 465, 774, 612, 569, 774, 127, 338, 672, 297, 690, 399, 469, 255, 144, 227, 713, 646, 884, 532, 777, 105, 134, 681, 475, 720, 191, 280, 617, 589, 814, 699, 417, 654, 244, 742, 236, 698, 866, 527, 511, 872, 527, 203, 106, 218, 425, 332, 363, 735, 729, 685, 542, 528, 695, 129, 600, 505, 583, 526, 253, 472, 821, 846, 494, 644, 680, 482, 281, 823, 187, 417, 167, 521, 720, 433]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "ii. Count and print all odd numbers in the list."
+      ],
+      "metadata": {
+        "id": "9VD6kYezkKEH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "odd_count=0\n",
+        "for num in random_list:\n",
+        "    if num%2!=0:\n",
+        "        print(num)\n",
+        "        odd_count+=1\n",
+        "print(\"Odd numbers: \",odd_count)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iZ40CsH0hQrP",
+        "outputId": "d8635f12-c248-4ec9-e8a2-4dd8b2b8a048"
+      },
+      "execution_count": 70,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "703\n",
+            "371\n",
+            "889\n",
+            "793\n",
+            "193\n",
+            "415\n",
+            "789\n",
+            "217\n",
+            "337\n",
+            "581\n",
+            "663\n",
+            "517\n",
+            "635\n",
+            "663\n",
+            "123\n",
+            "125\n",
+            "465\n",
+            "569\n",
+            "127\n",
+            "297\n",
+            "399\n",
+            "469\n",
+            "255\n",
+            "227\n",
+            "713\n",
+            "777\n",
+            "105\n",
+            "681\n",
+            "475\n",
+            "191\n",
+            "617\n",
+            "589\n",
+            "699\n",
+            "417\n",
+            "527\n",
+            "511\n",
+            "527\n",
+            "203\n",
+            "425\n",
+            "363\n",
+            "735\n",
+            "729\n",
+            "685\n",
+            "695\n",
+            "129\n",
+            "505\n",
+            "583\n",
+            "253\n",
+            "821\n",
+            "281\n",
+            "823\n",
+            "187\n",
+            "417\n",
+            "167\n",
+            "521\n",
+            "433\n",
+            "Odd numbers:  56\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "iii. Count and print all even numbers in the list."
+      ],
+      "metadata": {
+        "id": "Z9xMZigmkTMz"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "even_count=0\n",
+        "for num in random_list:\n",
+        "    if num%2==0:\n",
+        "        print(num)\n",
+        "        even_count+=1\n",
+        "print(\"Even numbers: \",even_count)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Cj45Aj1Mjfz4",
+        "outputId": "2f81c6f5-b992-4e9c-ad50-b121b8953224"
+      },
+      "execution_count": 71,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "458\n",
+            "854\n",
+            "664\n",
+            "152\n",
+            "888\n",
+            "196\n",
+            "262\n",
+            "776\n",
+            "530\n",
+            "774\n",
+            "612\n",
+            "774\n",
+            "338\n",
+            "672\n",
+            "690\n",
+            "144\n",
+            "646\n",
+            "884\n",
+            "532\n",
+            "134\n",
+            "720\n",
+            "280\n",
+            "814\n",
+            "654\n",
+            "244\n",
+            "742\n",
+            "236\n",
+            "698\n",
+            "866\n",
+            "872\n",
+            "106\n",
+            "218\n",
+            "332\n",
+            "542\n",
+            "528\n",
+            "600\n",
+            "526\n",
+            "472\n",
+            "846\n",
+            "494\n",
+            "644\n",
+            "680\n",
+            "482\n",
+            "720\n",
+            "Even numbers:  44\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q3(iv) – Find Prime Numbers"
+      ],
+      "metadata": {
+        "id": "7rpHiGyukiP0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def is_prime(n):\n",
+        "    if n < 2:\n",
+        "        return False\n",
+        "\n",
+        "    for i in range(2, int(n ** 0.5) + 1):\n",
+        "        if n % i == 0:\n",
+        "            return False\n",
+        "    return True\n",
+        "prime_numbers = [num for num in random_list if is_prime(num)]\n",
+        "print(\"Prime numbers:\", prime_numbers)\n",
+        "print(\"Number of prime numbers:\", len(prime_numbers))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TWGi6ZJ9kORM",
+        "outputId": "2fadf25d-f4c1-413a-e67e-e7e0648af14e"
+      },
+      "execution_count": 72,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Prime numbers: [193, 337, 569, 127, 227, 191, 617, 821, 281, 823, 167, 521, 433]\n",
+            "Number of prime numbers: 13\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q3(v) – Most Frequent Number"
+      ],
+      "metadata": {
+        "id": "Zyebr3dYkjmZ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "maxcount=max(random_list,key=random_list.count)\n",
+        "print(\"Most frequent:\",maxcount)\n",
+        "print(\"Number of times:\", random_list.count(maxcount))\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aCcxCI27knNn",
+        "outputId": "6c4ffa96-a01e-4e24-c1c1-dac768174058"
+      },
+      "execution_count": 73,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Most frequent: 663\n",
+            "Number of times: 2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q4(i) – Create the Sets"
+      ],
+      "metadata": {
+        "id": "fxIG12_bk_TD"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "roll=[1,0,2,4,1,7,0,2,9,3]\n",
+        "A = {digit*7 for digit in roll}\n",
+        "B = {digit*9 for digit in roll}\n",
+        "\n",
+        "print(\"Set A: \",A)\n",
+        "print(\"Set B: \",B)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "y-J_3KUjhQo3",
+        "outputId": "b4c9b6a0-df24-4bf2-ad73-b3077e6f7a84"
+      },
+      "execution_count": 74,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Set A:  {0, 7, 14, 49, 21, 28, 63}\n",
+            "Set B:  {0, 36, 9, 81, 18, 27, 63}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q4(i). Find the union of A and B — all unique values across both sets."
+      ],
+      "metadata": {
+        "id": "D0EZhSChlPyT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Union: \",A.union(B))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "C60wOncRhQmh",
+        "outputId": "3a52129d-f26c-4cab-bea5-471e3ad66db0"
+      },
+      "execution_count": 75,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Union:  {0, 36, 7, 9, 14, 49, 81, 18, 21, 27, 28, 63}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q4(ii) – Intersection"
+      ],
+      "metadata": {
+        "id": "V-jFG4ndlaZt"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Intersection=\", A.intersection(B))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G_Hu4z40hQkC",
+        "outputId": "63dd8b55-9971-4a57-df27-b8d8ca5d840b"
+      },
+      "execution_count": 76,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Intersection= {0, 63}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "iii. Find A − B and B − A separately (not combined) using difference(), and explain in one line how this differs from symmetric_difference()."
+      ],
+      "metadata": {
+        "id": "zF8TW1mcmeXn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"A-B: \",A.difference(B))\n",
+        "print(\"B-A: \",B.difference(A))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "XT-yYpGUmdbr",
+        "outputId": "2f5d2f9e-69f9-437c-c097-76d32b15c862"
+      },
+      "execution_count": 77,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "A-B:  {7, 14, 49, 21, 28}\n",
+            "B-A:  {36, 9, 81, 18, 27}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q4(iv) – Symmetric Difference"
+      ],
+      "metadata": {
+        "id": "dRYVt6YLldjZ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Symmetric Difference:\", A.symmetric_difference(B))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fGps6hsif8gK",
+        "outputId": "99eb0b11-a780-4b4a-92cf-782d41725161"
+      },
+      "execution_count": 78,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Symmetric Difference: {7, 9, 14, 81, 18, 21, 27, 28, 36, 49}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q4(v) – Subset & Superset"
+      ],
+      "metadata": {
+        "id": "DCGpINjAleN0"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Is A subset of B?\", A.issubset(B))\n",
+        "print(\"Is B superset of A?\", B.issuperset(A))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Bx3eJmpjlegD",
+        "outputId": "a0a845aa-f45b-4646-df47-cdb300e84650"
+      },
+      "execution_count": 79,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Is A subset of B? False\n",
+            "Is B superset of A? False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q4(vii) – Safe Element Removal"
+      ],
+      "metadata": {
+        "id": "qUAfvUCDlesq"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "y = int(input(\"Enter a value to remove from Set A: \"))\n",
+        "A.discard(y)\n",
+        "print(\"Updated Set A:\", A)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iFbh6ZK3le4y",
+        "outputId": "bd31773f-ba1a-465d-ab97-03a2f2f8a6f5"
+      },
+      "execution_count": 80,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter a value to remove from Set A: 49\n",
+            "Updated Set A: {0, 7, 14, 21, 28, 63}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5(i) – Rename a Key"
+      ],
+      "metadata": {
+        "id": "wsDO6BuSlfEu"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "my_dict = {\n",
+        "    \"name\": \"Tarang\",\n",
+        "    \"roll_no\": \"1024170293\",\n",
+        "    \"branch\": \"Copc\",\n",
+        "    \"age\": 21,\n",
+        "    \"city\": \"Aligarh\"\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "wkQFee25lfQn"
+      },
+      "execution_count": 81,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "my_dict[\"location\"]=my_dict.pop(\"city\")\n",
+        "print(\"After renaming city to location: \")\n",
+        "print(my_dict)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LhZr4j8Jlfpe",
+        "outputId": "74ae255a-4608-4aac-b3b2-ec1fcdc17e19"
+      },
+      "execution_count": 82,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "After renaming city to location: \n",
+            "{'name': 'Tarang', 'roll_no': '1024170293', 'branch': 'Copc', 'age': 21, 'location': 'Aligarh'}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5(ii) – Add a New Key"
+      ],
+      "metadata": {
+        "id": "K0DA48MUlf1l"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "my_dict[\"CGPA\"] = 9\n",
+        "print(\"After adding CGPA: \")\n",
+        "print(my_dict)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "zawrX4H8lgCR",
+        "outputId": "59c516b1-7f7b-4149-9132-af535efee503"
+      },
+      "execution_count": 83,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "After adding CGPA: \n",
+            "{'name': 'Tarang', 'roll_no': '1024170293', 'branch': 'Copc', 'age': 21, 'location': 'Aligarh', 'CGPA': 9}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "Q5(iii) – Update a Value"
+      ],
+      "metadata": {
+        "id": "urqpGYcdlgND"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "my_dict[\"age\"]=my_dict[\"age\"]+1\n",
+        "print(my_dict)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1P8pMExrlgaA",
+        "outputId": "098434d6-849c-43d2-849b-b48bd63ab6c7"
+      },
+      "execution_count": 84,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'Tarang', 'roll_no': '1024170293', 'branch': 'Copc', 'age': 22, 'location': 'Aligarh', 'CGPA': 9}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5(iv) – Delete a Key  "
+      ],
+      "metadata": {
+        "id": "QkTORUeclyLX"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "copy1=my_dict.copy()\n",
+        "copy2=my_dict.copy()\n",
+        "#pop\n",
+        "val=copy1.pop(\"branch\")\n",
+        "print(val)\n",
+        "print(copy1)\n",
+        "del copy2[\"branch\"]\n",
+        "print(copy2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Gaja2F42lyXR",
+        "outputId": "2560207e-3f7e-455b-932f-27ba83979958"
+      },
+      "execution_count": 85,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Copc\n",
+            "{'name': 'Tarang', 'roll_no': '1024170293', 'age': 22, 'location': 'Aligarh', 'CGPA': 9}\n",
+            "{'name': 'Tarang', 'roll_no': '1024170293', 'age': 22, 'location': 'Aligarh', 'CGPA': 9}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5(v) – Print Key–Value Pairs  "
+      ],
+      "metadata": {
+        "id": "8ssNC11Alyi9"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "for key,value in my_dict.items():\n",
+        "  print(key,\"->\",value)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "g7aMbbTPlytg",
+        "outputId": "e0b711ee-c26f-47b7-f758-e7be5d5a4f39"
+      },
+      "execution_count": 86,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "name -> Tarang\n",
+            "roll_no -> 1024170293\n",
+            "branch -> Copc\n",
+            "age -> 22\n",
+            "location -> Aligarh\n",
+            "CGPA -> 9\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5(vi) – Check for a Key  "
+      ],
+      "metadata": {
+        "id": "iJLr0CTSly4Q"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "if \"email\" in my_dict:\n",
+        "  print(my_dict[\"email\"])\n",
+        "else :\n",
+        "  print(\"Eamil key is not in dict\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "p_W4_z09lzDo",
+        "outputId": "d1ec4907-ca10-4c3b-ffa8-3e16b9222882"
+      },
+      "execution_count": 87,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Eamil key is not in dict\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5(vii) – Merge Dictionaries  "
+      ],
+      "metadata": {
+        "id": "qSFsTB_nlzPE"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "friend_dict=my_dict.copy()\n",
+        "friend_dict[\"name\"]=\"Milan\"\n",
+        "friend_dict[\"age\"]=18\n",
+        "friend_dict[\"CGPA\"]=8.2\n",
+        "print(friend_dict)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "schiwlA0lzbd",
+        "outputId": "db08e056-befc-459d-f4e0-4e88c69ac29e"
+      },
+      "execution_count": 88,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'name': 'Milan', 'roll_no': '1024170293', 'branch': 'Copc', 'age': 18, 'location': 'Aligarh', 'CGPA': 8.2}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Q5(viii) – Dictionary Comprehension  "
+      ],
+      "metadata": {
+        "id": "4r4WT2_gotYB"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "string_dict = {k:v for k, v in my_dict.items() if isinstance(v, str)}\n",
+        "print(\"Dictionary containing only string values:\")\n",
+        "print(string_dict)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ny2Aek_Dos52",
+        "outputId": "8043e4a0-a42f-4104-88e4-c716754803a2"
+      },
+      "execution_count": 89,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Dictionary containing only string values:\n",
+            "{'name': 'Tarang', 'roll_no': '1024170293', 'branch': 'Copc', 'location': 'Aligarh'}\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
